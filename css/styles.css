@@ -174,44 +174,50 @@ main {
 		section.clothes {
 			display: flex;
 			gap: 2em;
-			article {
-				border-radius: 14px;
-				border: 1px solid #f1f1f3;
-				overflow: hidden;
-				width: 305px;
+			transition: transform 0.5s ease;
+			a {
+				text-decoration: none;
+				color: #262626;
+				article {
+					border-radius: 14px;
+					border: 1px solid #f1f1f3;
+					overflow: hidden;
+					width: 305px;
+					min-width: 100%;
 
-				figure {
-					background: #f7f7f8;
-					img {
-						width: 305px;
-						height: 305px;
-						object-fit: contain;
-					}
-				}
-				figcaption {
-					background: #ffffff;
-					display: flex;
-					flex-direction: column;
-					gap: 2em;
-					width: 100vh;
-					padding: 30px 24px;
-
-					h2 {
-						font-size: 16px;
-						width: 100vh;
-					}
-					h2::first-letter {
-						text-transform: capitalize;
-					}
-					section.footer {
-						display: flex;
-						gap: 8em;
-						h3 {
-							color: #98989a;
-							font-size: 16px;
+					figure {
+						background: #f7f7f8;
+						img {
+							width: 305px;
+							height: 305px;
+							object-fit: contain;
 						}
-						h3::first-letter {
+					}
+					figcaption {
+						background: #ffffff;
+						display: flex;
+						flex-direction: column;
+						gap: 2em;
+						width: 100vh;
+						padding: 30px 24px;
+
+						h2 {
+							font-size: 16px;
+							width: 100vh;
+						}
+						h2::first-letter {
 							text-transform: capitalize;
+						}
+						section.footer {
+							display: flex;
+							gap: 8em;
+							h3 {
+								color: #98989a;
+								font-size: 16px;
+							}
+							h3::first-letter {
+								text-transform: capitalize;
+							}
 						}
 					}
 				}
@@ -269,8 +275,7 @@ main {
 	section.product-detail {
 		display: flex;
 		div.product {
-			width: 500px;
-			height: 500px; /*Porque no va fit content 😅*/
+			width: 100%;
 			img {
 				width: 500px;
 				object-fit: fill;
@@ -318,7 +323,7 @@ main {
 					p::first-letter {
 						text-transform: capitalize;
 					}
-					h1::first-letter {
+					h2::first-letter {
 						text-transform: capitalize;
 					}
 				}
@@ -327,23 +332,28 @@ main {
 				}
 				div.buttons {
 					display: flex;
-					gap: 50px;
+					gap: 5px;
 					button {
 						border-radius: 32px;
-						padding: 24px 10px;
 						font-size: 18px;
-						width: 15em;
 						display: flex;
-						gap: 1em;
 						justify-content: center;
 						align-items: center;
 						height: fit-content;
+						width: 10.5em;
+						height: 3em;
 					}
 					button.buy {
 						background: #262626;
 						color: #f1f1f3;
+						display: flex;
+						gap: 10px;
+						padding: 16px 10px;
 					}
 					button.cart {
+						display: flex;
+						gap: 10px;
+						padding: 16px 10px;
 						border: 1px solid #f1f1f3;
 					}
 				}
