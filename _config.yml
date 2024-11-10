@@ -1,3 +1,0 @@
-includes:
-  - ../html/
-  exclude: ['*.md']
