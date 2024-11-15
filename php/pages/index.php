@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="twitter:title" content="Klothink - Ropa Sostenible y Personalizada" />
 		<meta property="og:title" content="Klothink - Ropa Sostenible y Personalizada" />
-		<meta name="keywords" content="Moda sostenible, ropa personalizada, estilo de vida, algoritmos, aprendizaje automático, impacto ambiental" />
+		<meta name="keywords" content="moda sostenible, ropa personalizada, estilo de vida, algoritmos, aprendizaje automático, impacto ambiental" />
 		<meta name="twitter:description" content="Encuentra ropa que se adapte a tu estilo de vida y valores." />
 		<meta property="og:description" content="Encuentra ropa que se adapte a tu estilo de vida y valores." />
 		<meta name="description" content="Klothink - Encuentra ropa sostenible y personalizada que se adapta a tu estilo de vida y valores." />
