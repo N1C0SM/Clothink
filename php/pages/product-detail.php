@@ -37,40 +37,40 @@
 			<main>
 				<?php
 					$product = $products[$_GET['id']-1];
-						if ($product) {
-						echo('<section class="product-detail">');
-						if (!empty($product['image'])) {
-							$productsImagesUrls = array_map('trim', explode(',', $product['image']));
-							if (count($productsImagesUrls) > 0) {
-								echo('<div class="images">');
-								foreach ($productsImagesUrls as $imageUrl) {
-									echo '<img src="' . htmlspecialchars($imageUrl) . '" alt="Imagen del producto">';
-								}
-								echo('</div>');
-							} else {
-								echo '<p>No hay imágenes disponibles para este producto .</p>'.$product['id']; 
-							}
-						} else {
-							echo '<p>No hay imágenes disponibles para este producto.</p>' . $product['id']; 
-						}
-						
-						echo('</section>'); 
-					} else {
-						echo '<p>Producto no encontrado.</p>'; 
-					}
 					
-    ?>
-    <section class="reviews">
-        <h2 class="title">reseñas</h2>
-        <h3 class="category">reseñas de productos</h3>
-    </section>
-</main>
+						echo '<section class="product-detail">';
+							$productsImagesUrls = array_map('trim', explode(',', $product['image']));
+							echo '<div class="product">';
+								echo '<img src="' . htmlspecialchars($productsImagesUrls[0]) . '" alt="">';
+								echo '<div class="images">';
+									foreach ($productsImagesUrls as $imageUrl) {
+										echo '<img src="' . htmlspecialchars($imageUrl) . '" alt="">';
+									}
+								echo '</div>';
+							echo '</div>';
+							echo '<div class="details">';
+								echo '<div class="header">';
+									echo '<div class="title">';
+										// echo '<p>' . htmlspecialchars($categoryOK['name']) .'</p>';
+										echo '<h2>' . htmlspecialchars($product['name']) . '</h2>';
+									echo '</div>';
+									echo '<h3 class="price">' . htmlspecialchars($product['price']) . '</h3>';
+									echo '<div class="buttons">';
+										echo('<button class"buy">');
+									echo('<img src"../../img/icons/buy.svg" alt"cart-icon">');
+										echo('</button>');
+									echo '</div>';
+								echo '</div>';
+							echo '</div>'; 
+						echo '</section>'; 
 ?>
-				<section class="reviews">
+
+				<!-- <section class="reviews">
 					<h2 class="title">reseñas</h2>
 					<h3 class="category">reseñas de productos</h3>
-				</section>
+				</section> -->
 			</main>
+				
 			<footer></footer>
 		</div>
 	</body>

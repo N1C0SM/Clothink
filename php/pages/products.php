@@ -63,33 +63,37 @@
 				<section class="collections">
 					<?php
                         foreach ($collections as $collection) {
-                            echo '<div class="collection" id="' . htmlspecialchars($collection['name']) . '">';
-                                echo'<div class="header">';
-                                    echo'<div class="title">';
-                                        echo '<h2>' . htmlspecialchars($collection['name']) . '</h2>';
-                                        echo'<p>' .    htmlspecialchars($collection['description'])         . '</p>';
-                                    echo'</div>';
-                                echo'</div>';
-                                echo('<div class="clothes">');
-								foreach ($products as $product ) {
-											echo('<a href="./product-detail.php?id='.$product['id'].'">');
-											$productsImagesUrls = array_map('trim', explode(',', $product['image']));
-												echo'<article>';
-													echo'<figure>';
-														echo '<img src="' . htmlspecialchars($productsImagesUrls[0]) . '" alt="' . htmlspecialchars($product['name']) . '" />';
-													echo'</figure>';
-													echo'<figcaption>';
-														echo'<h2>' .htmlspecialchars($product['name']).'</h2>';
-														echo'<div class="footer">';
-															echo'<h3>' . htmlspecialchars($product['fit']) . '</h3>';
-															echo'<span>'. htmlspecialchars($product['price']) .'</span>';
-														echo'</div>';
-													echo'</figcaption>';
-												echo'</article>';
-											echo'</a>';
-                                        }
-                        		echo'</div>';
-                        }
+    						echo '<div class="collection" id="' . htmlspecialchars($collection['name']) . '">';
+								echo '<div class="header">';
+									echo '<div class="title">';
+										echo '<h2>' . htmlspecialchars($collection['name']) . '</h2>';
+										echo '<p>' . htmlspecialchars($collection['description']) . '</p>';
+									echo '</div>';
+								echo '</div>';
+								echo '<div class="clothes">';
+									foreach ($products as $product) {
+										if($product['collection_id'] === $collection['id']){
+											echo '<a href="./product-detail.php?id=' . htmlspecialchars($product['id']) . '">';
+												$productsImagesUrls = array_map('trim', explode(',', $product['image']));
+												echo '<article>';
+													echo '<figure>';
+														echo '<img src="' . htmlspecialchars($productsImagesUrls[0]) . '" alt="' . htmlspecialchars($product['name']) . '">';
+													echo '</figure>';
+													echo '<figcaption>';
+														echo '<h2>' . htmlspecialchars($product['name']) . '</h2>';
+														echo '<div class="footer">';
+															echo '<h3>' . htmlspecialchars($product['fit']) . '</h3>';
+															echo '<span>' . htmlspecialchars($product['price']) . '</span>';
+														echo '</div>';
+													echo '</figcaption>';
+												echo '</article>';
+											echo '</a>';
+										}
+									}
+								echo '</div>';
+							echo '</div>';
+						}
+
                     ?>
 			</main>
 			<footer>
